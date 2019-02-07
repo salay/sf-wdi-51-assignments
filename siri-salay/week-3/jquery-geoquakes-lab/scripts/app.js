@@ -32,7 +32,6 @@ $(document).ready(function() {
             var myDate = new Date( time *1000);
 
 
-
             $('#quakes').append(`<li> An earthquake happened: <br>
                                 ${place} <br>
                                 on ${myDate} </li><br>`);

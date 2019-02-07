@@ -138,15 +138,15 @@ var addOnesieImages = function(){
   loadingImage.addEventListener("click", putInCart);
 
 
-  // // //create an h2 element
-  // // var newPriceItem = document.createElement('h3');
-  // // //create price variable as an int
-  // // var price = onesies[i].price;
-  // // newPriceItem.innerHTML = "$" + price;
-  // // document.querySelectorAll('.price')[i].appendChild(newPriceItem);
-  // // //set the price
-  // // //when clicked put in cart and get total.
-}
+  //create an h2 element
+  var newPriceItem = document.createElement('h3');
+  //create price variable as an int
+  var price = onesies[i].price;
+  newPriceItem.innerHTML = "$" + price;
+  document.querySelectorAll('.price')[i].appendChild(newPriceItem);
+  //set the price
+  //when clicked put in cart and get total.
+  }
 }
 
 var addPillowImages = function(){
