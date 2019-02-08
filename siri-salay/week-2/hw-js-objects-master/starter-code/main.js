@@ -4,13 +4,22 @@
 	Each of these animal objects should have a name, a noise that they make,
 	and a makeNoise property that prints out their noise.
 */
-var animal = function(name, noise) {
-	this.name =  name,
-	this.noise = noise,
-	makeNoise =  function() {
+var animal = function(nameAnimal, noise, makeNoise) {
+	var color = "blue";
+	this.nameAnimal =  nameAnimal;
+	this.noise = noise;
+	this.makeNoise =  function() {
 		console.log(this.noise);
 	}
 }
+
+
+console.log(animal);
+var tiger = new animal("tiger", "roar");
+console.log(tiger);
+console.log(tiger.nameAnimal);
+console.log(tiger.noise);
+console.log(tiger.makeNoise());
 
 
 

@@ -36,6 +36,10 @@ $(document).ready(function() {
                                 ${place} <br>
                                 on ${myDate} </li><br>`);
 
+
+//begin the maps!
+
+
             var coords = response.features[i].geometry.coordinates;
             console.log(coords)
           var image = {
