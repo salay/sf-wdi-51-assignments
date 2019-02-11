@@ -11,8 +11,6 @@ $('form').on('submit',function(e) {
      if($('.contact form input[type = "text"]').val() === '') {
     $('.contact form input[type = "text"]').addClass('error');
   }
-
-
    });
 
 

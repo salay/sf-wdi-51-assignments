@@ -24,8 +24,34 @@ function showSlides() {
     slideIndex = 1
   }
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every x000 seconds
+  setTimeout(showSlides, 4000); // Change image every x000 seconds
 }
+
+
+// var i = 0;
+// var txt = 'Lorem ipsum typing effect!'; /* The text */
+// var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+// function typeWriter() {
+//   if (i < txt.length) {
+//     document.getElementById("demo").innerHTML += txt.charAt(i);
+//     i++;
+//     setTimeout(typeWriter, speed);
+//   }
+// }
+
+// typewriter();
+
+// function typewriter() {
+//   var text = document.querySelector(".hero h1");
+//   textArray = ["H", "i", ",", " ", "I", "'", "m", " ", "S", "i", "r", "i", "!"];
+//   for (var i = 0; i < textArray.length; i++) {
+//   text.innerHTML += textArray[i];
+//   setTimeout(typewriter, 3000);
+//   }
+// }
+
+//
 
 //click event for the dots may be bubbling up and affecting lightbox, making it show up
 //when clicking on dot????
@@ -39,18 +65,34 @@ function showSlides() {
 
 $(document).ready(function() {
     console.log("Everything is ready, let's dooooooooooo this");
+
+
+$(".thumbnail").on('click', function(){
+  if ($(this).hasClass("lightbox") === true) {
+  $(this).removeClass("lightbox");
+  }
+  else if ($(this).hasClass("lightbox") === false) {
+  $(this).addClass("lightbox");
+  }
+})
+
 $('nav').hide();
 $('.hero h1').hide();
-$("#blank").fadeOut(3000);
+$("#blank").fadeOut(1000);
 //45 sec.
-$("#mainImg").delay(4000).queue(function(){
+$("#mainImg").delay(2000).queue(function(){
     $(this).addClass("filter").dequeue();
 });
 
-  $("body").delay(3000).queue(function(){
+  $("body").delay(2000).queue(function(){
   $('nav').slideDown().dequeue();
-  $('.hero h1').show().dequeue();
 });
+
+  $("#header").delay(3000).queue(function(){
+   $('.hero h1').show().dequeue();
+  });
+
+
 
 // $("#mainImg").fadeIn(60000, function() {
 //     $(this).addClass("filter");
@@ -106,13 +148,13 @@ $("#quoteBox> div:gt(0)").hide();
 
 setInterval(function() {
   $('#quoteBox > div:first')
-    .fadeOut(500)
+    .fadeOut(1000)
     .next()
-    .delay(500)
-    .fadeIn(500)
+    .delay(1000)
+    .fadeIn(1000)
     .end()
     .appendTo('#quoteBox');
-},  2000);
+},  4000);
 
 
 
@@ -129,7 +171,6 @@ setInterval(function() {
 
  $(".lightbox").on('click', function(){
         $(".lightbox:target").show();
-        //when you click
       })
 
 
@@ -159,6 +200,15 @@ var category3 = "inspire";
 // $("#category1").fadeIn( "slow" )
 // //uhhYouCanPutAFunctionHere
 // };
+
+
+$('form').on('submit',function(e) {
+   e.preventDefault();
+
+     if($('#contact form input[type = "text"]').val() === '') {
+    $('#contact form input[type = "text"]').addClass('error');
+  }
+   });
 
 
  $.ajax({

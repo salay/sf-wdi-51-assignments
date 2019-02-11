@@ -1,3 +1,42 @@
+.hero h1 {
+  /*border: 1px solid white;*/
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 5% auto;/* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.9s steps(40, end),
+    blink-caret .75s step-end 1;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 28%; }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+
+.about-slides-container {
+  width: 63%;
+  height: auto;
+  border: 3px solid yellow;
+}
+
+
+
+
+
+
+
+
+
 .slide-image {
   display: block;
   height: 520px;
@@ -10,6 +49,23 @@
 
 .dots {
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin-left: 30%;
+}
+
+.thumbnailDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnail {
+  height: 50px;
+  width: auto;
+  margin-top: -10%;
+  margin-bottom: 10%;
 }
 
 /* header ---------------------------------------------------------------------------------*/
@@ -118,13 +174,13 @@ h2 a {
 }
 
 .hero h2 a {
-    color: beige;
+    color: rgba(70, 87, 102, 0.8);
 }
 
 .hero h1 {
   position: relative;
   bottom: -1.2em;
-  color: beige;
+  color: lightgrey;
   font-size: 52px;
   font-family: 'Special Elite', cursive;
   opacity: .9;
@@ -135,7 +191,7 @@ h2 a {
 
 nav {
   margin-top: -1%;
-  margin-left: -1%;
+  margin-left: -2%;
   /* -3.5% 8% 0% 7.8%;*/
   width: 101%;
   /*width: 83.5;*/
@@ -169,7 +225,7 @@ nav ul li a {
 }
 
 .highlight {
-  color: beige;
+  color: lightgrey;
 }
 
 ul li {
@@ -180,11 +236,13 @@ color: #8ba6b4;
 /* THE MEAT ---------------------------------------------------------------------------------*/
 
 #about, #portfolio, #contact #quotes{
-  background-color: rgba(70, 87, 102, 0.8);
+  background-color: lightgrey;
   /*#465766;*/
   font-size: 22px;
   text-align: left;
-  color: beige;
+  color:#003048;
+  /*
+  rgba(70, 87, 102, 0.8);*/
   padding: 1em 3em;/*
   margin: 0 8%;*/
 }
@@ -193,7 +251,7 @@ color: #8ba6b4;
 
 #about {
   position: relative;
-  top: 45em;
+  top: 43em;
   /*border: 2px solid lightblue;*/
   /*width: 100%;*/
   padding-bottom: 32em;
@@ -212,7 +270,7 @@ color: #8ba6b4;
 .cities {
   position: relative;
   bottom: 5.5em;
-  padding-left: 50%;
+  padding-left: 40%;
   padding-right: 3%;
   z-index: 1;
   font-size: 14px;
@@ -259,6 +317,7 @@ font-size: 40px;
   display: block;
   margin-left: 7%;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .mySlides img {
@@ -317,17 +376,18 @@ font-size: 40px;
 /* LIGHTBOX??? ------------------------------------------------------------*/
 
 .lightbox {
-  /** Default lightbox to hidden */
+  /** Default lightbox to hidden
   display: none;
   /** Position and style */
   position: fixed;
   z-index: 9;
-  width: 100%;
+  width: auto;
   height: 100%;
   text-align: center;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.8);
+  padding: 10%;
+  top: 18%;
+  left: 15%;
+  background: rgba(0,0,0,0.5);
 }
 
 .lightbox img {
@@ -362,14 +422,14 @@ font-size: 40px;
 
 
 #quotes {
-  background-color: rgba(70, 87, 102, 0.8);
+  background-color: none;
   /*#465766;*/
   font-size: 22px;
   text-align: center;
-  color: beige;
+  color: lightgrey;
   padding: 1em 3em;
   position: relative;
-  top:50em;
+  top:45em;
   padding-top: 5%;
   height: 12em;
   line-height: 2em;
@@ -385,12 +445,12 @@ font-size: 40px;
 /* the form..... ------------------------------------------------------------*/
 #contact {
   font-family: 'Special Elite', cursive;
-  background-color: rgba(70, 87, 102, 0.8);
-  color: beige;
+  background-color: lightgrey;
+  color: rgba(70, 87, 102, 0.8);
   font-size: 24px;
   height: 16em;
   position: relative;
-  top: 45em;
+  top: 42em;
   width: 100%;
   text-align: center;
   margin: 5em auto;
@@ -451,6 +511,63 @@ input::placeholder {
 }
 
 
+
+footer {
+  color: lightgrey;
+  font-size: 36px;
+  position: relative;
+  top: 27em;
+  text-align: center;
+}
+
+
+  .hamburger {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1100px){
+  #about {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    padding-bottom: 60em;
+  }
+
+#about > p {
+
+  width: 100em;
+}
+
+.aboutText {
+  max-width: 100em;
+}
+
+.hero h1 {
+  padding-top: 5em;
+}
+
+nav {
+  display: none;
+}
+  .hamburger {
+    display: block;
+    color: #fff;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 10px;
+    left: 2px;
+  }
+
+
+
+}
 
 
 

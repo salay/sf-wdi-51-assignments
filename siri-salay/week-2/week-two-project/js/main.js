@@ -118,7 +118,8 @@ var addPillowImages = function(){
     }
 }
 
-var putInCart = function(){
+var putInCart = function()
+  {
 
       // Create list item and store it in a variable.
       var newListItem = document.createElement('li');
@@ -127,7 +128,7 @@ var putInCart = function(){
       // HOW TO GET SPECIFIC IMAGE DESCRIPTION - it's also the alt text
 
       newListItem.innerHTML = this.alt;
-      //returns undefined
+      //returns undefined;
       //document.getElementById("").alt;
       //this.querySelector("img").src;
       newListItem.style.margin = "1em 1em 0 0 ";

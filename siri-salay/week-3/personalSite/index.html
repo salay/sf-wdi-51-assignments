@@ -23,6 +23,8 @@
 
 
   <nav>
+
+        <a class="hamburger" href=""><i class="fa fa-bars"></i></a>
       <ul>
         <li><a href="#header">The Top!</a></li>
         <li><a href="#about">About</a></li>
@@ -43,7 +45,7 @@
 
 
         <div class = "hero">
-            <h1>Hi, I'm Siri!</h1>
+            <h1 id = "demo">Hi, I'm Siri!</h1>
             <h2><a href="#about">It's Nice To Meet You!</a></h2>
         </div>
 
@@ -65,7 +67,6 @@
 
 
     <!-- Slideshow container -->
-
     <div class="slideshow-container">
       <!-- Full-width images with number and caption text -->
 
@@ -76,9 +77,9 @@
         <a class="slide-image" href="#img1">
           <img src="./images/chattanooga-night.jpeg">
         </a>
-          <a href="#_" class="lightbox" id="img1">
+       <!--    <a href="#_" class="lightbox" id="img1">
             <img src="./images/chattanooga-night.jpeg" alt="chattanooga-night">
-        </a>
+        </a> -->
       </div>
 
       <div class="mySlides fade" id = "slide2">
@@ -89,9 +90,9 @@
           <img src="./images/san-francisco-night.jpg">
         </a>
 
-        <a href="#_" class="lightbox" id="img2">
+       <!--  <a href="#_" class="lightbox" id="img2">
             <img src="./images/san-francisco-night.jpg" alt="san-francisco-night">
-        </a>
+        </a> -->
 
       </div>
 
@@ -102,22 +103,33 @@
         <a class="slide-image" href="#img3">
           <img src="./images/new-orleans-night.jpg">
         </a>
-        <a href="#_" class="lightbox" id="img3">
+       <!--  <a href="#_" class="lightbox" id="img3">
             <img src="./images/new-orleans-night.jpg" alt="new-orleans-night">
-        </a>
+        </a> -->
       </div>
 
       <p class="cities">
-        The three cities pictured <!--  in the background  -->are San Francisco, New Orleans, and Chattanooga, all of which I have ties to in different ways.
+      <!--   The three cities pictured in the backgroundare San Francisco, New Orleans, and Chattanooga, all of which I have ties to in different ways. -->
       </p>
 
       <!-- The dots/circles -->
       <div class="dots">
-        <span id = "dot1" class="dot"></span>
-        <span id = "dot2" class="dot"></span>
-        <span id = "dot3" class="dot"></span>
+        <div class="thumbnailDiv">
+          <img src="./images/chattanooga-night.jpeg" class="thumbnail">
+          <div id = "dot1" class="dot"></div>
+        </div>
+        <div class="thumbnailDiv">
+          <img src="./images/san-francisco-night.jpg" class="thumbnail">
+          <div id = "dot2" class="dot"></div>
+        </div>
+        <div class="thumbnailDiv">
+          <img src="./images/new-orleans-night.jpg" class="thumbnail">
+          <div id = "dot3" class="dot"></div>
+        </div>
       </div>
     </div>
+
+
   </section>
 
 
@@ -129,9 +141,9 @@
   <section id="quotes">
     <h2>I made a cheezy quote generatoré!</h2>
     <div id="quoteBox">
-        <div class="quoteTitles">values</div>
-        <div class="quoteTitles">life</div>
-        <div class="quoteTitles">inspiration</div>
+        <div class="quoteTitles">blah</div>
+        <div class="quoteTitles">blahblah</div>
+        <div class="quoteTitles">blahblahblah</div>
     </div>
 
       <!-- have quotes come in and out -->
@@ -160,5 +172,8 @@
 
 <!-- <script src="zooomin.js"></script> -->
 
+<footer>
+  This is a footer.
+</footer>
 </body>
 </html>
