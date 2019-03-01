@@ -86,5 +86,7 @@ class Beanbags extends Component  {
 
 export default Beanbags
 
+//this tell it exactly which class to export. check on this. probably right. 
+
 // why was this working when this was Comment?
 

@@ -21,6 +21,7 @@ class ContainerList extends Component {
     for (let index = 0; index < this.props.theMainCounterTHING; index++) {
       counters.push(<Counter />);
     }
+    //what is an array rendered as?
     return <div className="Counter-row">{counters}</div>;
   }
 }
