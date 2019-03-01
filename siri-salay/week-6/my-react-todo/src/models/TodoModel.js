@@ -13,6 +13,10 @@ class TodoModel {
     let request = axios.delete(`${`https://super-crud-api.herokuapp.com/api/todos`}/${todo._id}`)
     return request
   }
+  static update(todo, updatedInfo){
+    let request = axios.put(`${`https://super-crud-api.herokuapp.com/api/todos`}/${todo._id}`, updatedInfo)
+    return request
+  }
 }
 
 
