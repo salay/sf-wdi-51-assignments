@@ -1,0 +1,14 @@
+#addbutton {
+   position: relative;
+   left: 48%;
+}
+
+#subbutton {
+   position: relative;
+   left: 48%;
+}
+
+#counter {
+    position: relative;
+   left: 49%;
+}
