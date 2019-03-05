@@ -9,6 +9,7 @@ class Todos extends Component {
           key={todoArr._id}
           todo={todoArr}
           //Sprint 5: added deleteToto line
+          updateTodo={this.props.updateTodo} 
           deleteTodo={this.props.deleteTodo}/>
       )
     })

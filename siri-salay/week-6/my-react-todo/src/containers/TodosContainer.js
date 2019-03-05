@@ -1,29 +1,10 @@
-// import React, { Component } from 'react'
-
-// import TodoModel from '../models/Todo'
-
-// class TodosContainer extends Component {
-//   render(){
-//     TodoModel.allEndpoints().then( (response) => {
-//       console.log(response);
-//     })
-//     return (
-//       <div className='todosContainer'>
-//         <h2>This is the todos container</h2>
-//       </div>
-//     )
-//   }
-// }
-
-// refactored below:
-
-
 import React, {Component} from 'react'
 import TodoModel from '../models/TodoModel'
 import TodoRenderBox from '../components/TodoRenderBox'
 import CreateTodoForm from '../components/CreateTodoForm'
 
 class TodosContainer extends Component {
+    
   constructor(){
     super()
     this.state = {
@@ -47,6 +28,7 @@ class TodosContainer extends Component {
         body: todo,
         completed: false
     }
+
     TodoModel.create(newTodo).then((res) => {
         let todos = this.state.todos
         let newTodos = todos.push(res.data)
@@ -62,9 +44,21 @@ class TodosContainer extends Component {
         let todos = this.state.todos.filter(function(todo) {
           return todo._id !== res.data._id
         });
-        this.setState({todos})
+        this.setState({todos: todos})
     })
 }
+  
+
+updateTodo = (todoBody, todoId) => {
+    function isUpdatedTodo(todo) {
+        return todo._id === todoId;
+    }
+    TodoModel.update(todoId, todoBody).then((res) => {
+        let todos = this.state.todos
+        todos.find(isUpdatedTodo).body = todoBody.body
+        this.setState({todos: todos})
+    })
+  }
 
 
   render(){
@@ -73,6 +67,7 @@ class TodosContainer extends Component {
         <TodoRenderBox
           displayTodos={this.state.todos} 
           //Sprint 5: added deleteTodo line below
+          updateTodo={ this.updateTodo }
           deleteTodo={this.deleteTodo}
           />
           <CreateTodoForm

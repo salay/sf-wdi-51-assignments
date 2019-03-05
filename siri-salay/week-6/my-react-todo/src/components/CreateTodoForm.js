@@ -13,6 +13,7 @@ class CreateTodoForm extends Component {
       todo: event.target.value
     })
   }
+
   onFormSubmit = (event) => {
     event.preventDefault()
     let todo = this.state.todo

@@ -5,7 +5,6 @@ import axios from 'axios';
 import Results from "./results"
 
 
-
 class SearchContainer extends Component {
     state = {
         query: "puppies",
@@ -36,7 +35,7 @@ class SearchContainer extends Component {
         event.preventDefault();
         event.persist()
         this.setState({
-            query:event.target[0].value
+            query: event.target[0].value
         })
         
     }
