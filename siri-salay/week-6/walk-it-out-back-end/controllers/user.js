@@ -22,6 +22,7 @@ module.exports = {
       db.User.find({email: req.body.email})
       //.exec() will call the callback
         .exec()
+        //this is error first handling - for signup you don't want a user to already exist
         .then( user => {
           // if a user is found with that email
           if (user.length >= 1) {
