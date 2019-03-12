@@ -163,7 +163,7 @@ for i in range(0, len(states)):
 
 # randomize the array 
 import random
-random.shuffle(states)
+
 
 print("welcome to the state capitals game! The game will provide the name of a state and you will type in the capital. By the end you will have gone through all " + str(len(states)) + " states.")
 
@@ -176,40 +176,41 @@ def rerun():
 
 
 def stateCapitals():
+    random.shuffle(states)
     totalCorrect = 0 
     totalIncorrect = 0
     # loop through the array to ask "what is the capital of [name of state here]
     # if the user answers correctly. print correct. correct ++
     # for now the capitals also seem to have to be correclty cased....
-    for i in range(0, len(states)):
+    for i in range(len(states)):
         print('The state is: ' + states[i]['name'])
         capital = input("What is the capital? ")
         if capital == states[i]["capital"]:
             print(capital + " is correct!")
-            #states['correct'] += 1
             states[i]['correct'] = states[i]['correct'] + 1
-
             totalCorrect += 1
-
             print("the number of correct answers is " + str(totalCorrect) + " and the number of incorrect answers is " + str(totalIncorrect))
 
         else:
             print(capital + " is incorrect!")
-            # states['incorrect'] += 1
             states[i]['incorrect'] = states[i]['incorrect'] + 1
-
             totalIncorrect += 1
-
             print("the number of correct answers is " + str(totalCorrect) + " and the number of incorrect answers is " + str(totalIncorrect))
-
-
-            # states[len(states)-1]['incorrect'] = states[len(states)-1]['incorrect'] + 1
-            # print("the number of correct answers is " + str(states[len(states)-1]['correct']) + " and the number of incorrect answers is " + str(states[len(states)-1]['incorrect']))
     rerun()
 
 stateCapitals()
 
-print(states)
+#print(states)
 
 
+def total():
+    cor = 0 
+    wrong = 0
+    for i in range(len(states)):
+        #this is 0 + the value for the key correct at the present index is 
+        cor = cor + states[i]["correct"] 
+        wrong = wrong + states[i]["incorrect"] 
+    print("total correct: " + str(cor) + " total incorrect: " + str(wrong))
+
+total()
 
