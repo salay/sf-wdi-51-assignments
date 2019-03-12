@@ -46,3 +46,8 @@ def play_game():
         return
 
 play_game()
+
+print(states)
+
+print(states[0][])
+
