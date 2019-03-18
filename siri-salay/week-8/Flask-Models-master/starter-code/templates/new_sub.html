@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- trying to create a new sub below
+novalidate means that validation will be handled by backend,
+not by frontend -->
+  <form method="POST" action="" novalidate>
+    {{ form.hidden_tag() }}
+
+    <div>
+      {{ form.name.label }}
+      {{ form.name(class_="input") }}
+    </div>
+    <div>
+      {{ form.description.label }}
+      <!-- (class_="textarea") means a large text area. 
+      it's a built in css layout in bulma .css -->
+      {{ form.description(class_="textarea") }}
+    </div>
+
+    {{ form.submit(class_="button") }}
+  </form>
+{% endblock %}
