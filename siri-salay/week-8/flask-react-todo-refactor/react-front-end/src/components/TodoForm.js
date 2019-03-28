@@ -9,6 +9,7 @@ class TodoForm extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+  
   onChange(event) {
     console.log(event.target.value)
     this.setState({
@@ -22,7 +23,6 @@ class TodoForm extends Component {
     var todo = this.state.todo
     console.log({body: todo})
     this.props.onUpdateTodo({body: todo}, this.props.todo.id)
-  
   }
 
   componentDidMount(){

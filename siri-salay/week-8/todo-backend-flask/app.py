@@ -57,7 +57,6 @@ def get_create_todo(todoid=None):
         completed = Todo.query.get(todoid).completed
         return Todo.edit_todo(todoid, body, completed)
 
-       
 
     
         # THIS IS INCORRECT BECAUSE ORDER MATTERS: return Todo.edit_todo(todoid, completed, body)
@@ -65,8 +64,8 @@ def get_create_todo(todoid=None):
         
         #newPriority = request.json['priority']
         
-    else:
-        return Todo.get_todo(todoid)
+    # else:
+    #     return Todo.get_todo(todoid)
 
 if __name__ == '__main__':
     app.run(debug=DEBUG, port=PORT)

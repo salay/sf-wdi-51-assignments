@@ -38,9 +38,12 @@ class Todo(db.Model):
     def edit_todo(cls, todoid, body, completed):
         # get the todo already in the tadabase
         edit_todo = Todo.query.get(todoid)
-        edit_todo.body = body
+        
+        #edit_todo.body = body
+        edit_todo['body'] = body
         #todo.priority = priority
-        edit_todo.completed = completed
+        #edit_todo.completed = completed
+        edit_todo['completed'] = completed
         db.session.commit()
         return todo_schema.jsonify(edit_todo)
 

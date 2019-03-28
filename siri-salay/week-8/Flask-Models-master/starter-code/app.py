@@ -13,6 +13,7 @@ app.secret_key = 'adkjfalj.adflja.dfnasdf.asd'
 # Handle requests when the come in (before) and when they complete (after)
 @app.before_request
 def before_request():
+
     """Connect to the DB before each request."""
     g.db = models.DATABASE
     g.db.connect()
@@ -36,7 +37,6 @@ def index():
     if form.validate_on_submit():
       # if it is, we create a new Sub
       models.Sub.create(name=form.name.data.strip(), description=form.description.data.strip())
-
       flash("New sub registered. Called: {}".format(form.name.data))
       # and redirect to the main Sub index
       return redirect('/r')
@@ -54,6 +54,7 @@ def r(sub=None):
     # Find the right Sub
     sub_id = int(sub)
     sub = models.Sub.get(models.Sub.id == sub_id)
+    
     posts = sub.posts
     
     # Define the form for Posts
@@ -65,7 +66,7 @@ def r(sub=None):
         text=form.text.data.strip(), 
         sub=sub)
       flash("New post created")
-      return redirect("/r/{}".format(sub_id))
+      return redirect("/posts".format(sub_id))
     return render_template("sub.html", sub=sub, posts=posts, form=form)
 
 
@@ -79,6 +80,18 @@ def posts(id=None):
       post_id = int(id)
       post = models.Post.get(models.Post.id == post_id)
       return render_template('post.html', post=post)
+
+      form = CommentForm()
+    if form.validate_on_submit():
+      models.Comment.create(
+        user=form.user.data.strip(),
+        title=form.title.data.strip(), 
+        text=form.text.data.strip(), 
+        sub=sub)
+      flash("New comment")
+      return redirect("/r/{}".format(sub_id))
+    return render_template("sub.html", sub=sub, posts=posts, form=form)
+
 
 
 if __name__ == '__main__':

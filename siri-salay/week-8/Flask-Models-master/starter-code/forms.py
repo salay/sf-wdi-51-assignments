@@ -4,7 +4,7 @@ from wtforms import TextField, TextAreaField, SubmitField
 
   # import the Sub model
 from models import Sub
-
+from models import Post
   # create the class and variables to house Field definitions
 class SubForm(Form):
     name = TextField("Name this sub")
@@ -16,3 +16,9 @@ class PostForm(Form):
   title = TextField("Title")
   text = TextAreaField("Content")
   submit = SubmitField('Create Post')
+
+  class CommentForm(Form):
+    user = TextField("By:")
+    title = TextField("Title")
+    text = TextAreaField("Content")
+    submit = SubmitField('Submit comment')
